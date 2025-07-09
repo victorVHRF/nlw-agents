@@ -1,5 +1,10 @@
-GET http://localhost:3333/health
+#variavbles
+@baseUrl = http://localhost:3333
+
+# /helth
+GET {{baseUrl}}/health
 
 ###
 
-GET http://localhost:3333/rooms
+#Get rooms
+GET {{baseUrl}}/rooms
