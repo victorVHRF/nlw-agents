@@ -2,16 +2,19 @@
 @baseUrl = http://localhost:3333
 
 # /helth
+# @name health
 GET {{baseUrl}}/health
 
 ###
 
 #Get rooms
+# @name getRooms
 GET {{baseUrl}}/rooms
 
 ###
 
 #create room
+# @name createRoom
 POST {{baseUrl}}/rooms
 Content-Type: application/json
 
@@ -19,3 +22,11 @@ Content-Type: application/json
     "name": "sala teste",
     "description": "sala teste"
 }
+
+###
+@roomId = {{createRoom.response.body.$.roomId}}
+###
+
+#get room questions
+# @name getRoomQuestions
+GET {{baseUrl}}/rooms/{{roomId}}/questions
